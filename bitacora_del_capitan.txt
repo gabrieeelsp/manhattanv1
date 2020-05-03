@@ -1,0 +1,34 @@
+Bitacora del capitán
+
+1-  creo un subdominio "web"
+
+2-  instalo laravel 5.8 con el instalador automatico
+
+    conecto ssh
+    php artisan make:auth
+
+3-  comprimo todo el contenido de /web en un un archivo y lo descargo
+
+4-  creo un repositorio en github manhattan
+    gabrieeelsp@gmail.com
+    roscen7745
+
+5-  clonar el repositorio
+    git clone "http...."
+
+    git init
+
+6-  descromprimo el archivo dentro del directorio manhattan
+
+7-  hacer un commit
+    git status
+    git add .
+    git commit -m "first commit"
+
+8-  elimino todos el contenido de la carpeta remota /web
+
+9-  activo el repositorio desde el servidor
+
+10- hayq ue crear el archivo .env y asignarle el valor de bbdd y remote_url
+
+ya deberia estar todo subido y
