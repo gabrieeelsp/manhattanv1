@@ -12,18 +12,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <title>AdminLTE 3 | Starter</title>
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="/{{ env('URL_REMOTE', '') }}plugins/fontawesome-free/css/all.min.css">
 
   <!-- Select2 -->
-  <link rel="stylesheet" href="/plugins/select2/css/select2.min.css">
-  <link rel="stylesheet" href="/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+  <link rel="stylesheet" href="/{{ env('URL_REMOTE', '') }}plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="/{{ env('URL_REMOTE', '') }}plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 
   <!-- Theme style -->
-  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="/{{ env('URL_REMOTE', '') }}dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/{{ env('URL_REMOTE', '') }}css/style.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -56,13 +56,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
-<script src="/plugins/jquery/jquery.min.js"></script>
+<script src="/{{ env('URL_REMOTE', '') }}plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/{{ env('URL_REMOTE', '') }}plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="/dist/js/adminlte.min.js"></script>
+<script src="/{{ env('URL_REMOTE', '') }}dist/js/adminlte.min.js"></script>
 
-<script src="/js/script.js"></script>
+<script src="/{{ env('URL_REMOTE', '') }}js/script.js"></script>
 
 @stack('scripts')
 @stack('scripts2')
