@@ -79,6 +79,9 @@ class StockproductController extends Controller
      */
     public function store(Request $request)
     {
+        if(!$request->exists('web_enable')){
+            $request->request->add(['web_enable' => 0]);
+        }
         $rules = [
             'name' => 'required|unique:rubros,name',
             'slug' => 'required|unique:rubros,slug',

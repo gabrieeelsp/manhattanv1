@@ -38,7 +38,11 @@
         </div>
         <div class="col-sm-10">
           <div class="form-check">
-            {{ Form::checkbox('web_enable', null, $subrubro->web_enable, ['class' => 'form-check-input']) }}
+          @if(isset($subrubro))
+            {{ Form::checkbox('web_enable', 1, $subrubro->web_enable, ['class' => 'form-check-input']) }}
+          @else
+            {{ Form::checkbox('web_enable', 1, null, ['class' => 'form-check-input']) }}
+          @endif
             {{ Form::label('web_enable', 'Vista Web', ['class' => 'form-check-label']) }}
           </div>
         </div>

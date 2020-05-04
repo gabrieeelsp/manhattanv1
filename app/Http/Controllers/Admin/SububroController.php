@@ -80,6 +80,9 @@ class SubrubroController extends Controller
      */
     public function store(Request $request)
     {
+        if(!$request->exists('web_enable')){
+            $request->request->add(['web_enable' => 0]);
+        }
         $rules = [
             'name' => 'required|unique:subrubros,name',
             'slug' => 'required|unique:subrubros,slug',
