@@ -63,11 +63,11 @@
 									<div class="image">
 									@if($subrubro->categories->first()->images->count())
 									<div class="col-12">
-										<a href="{{ route('tienda.category',[$subrubro->categories->first()->slug]) }}"><img src="/images/{{ $subrubro->categories->first()->images->sortBy('posicion')->first()->name }}" alt="Gallery image 2" class="img-fluid" /></a>
+										<a href="{{ route('tienda.category',[$subrubro->categories->first()->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/{{ $subrubro->categories->first()->images->sortBy('posicion')->first()->name }}" alt="Gallery image 2" class="img-fluid" /></a>
 									</div>
 									@else
 									<div class="col-12">
-									<a href="{{ route('tienda.category', [$subrubro->categories->first()->slug]) }}"><img src="/images/img-default.jpg" alt="Gallery image 2" class="img-fluid" /></a>
+									<a href="{{ route('tienda.category', [$subrubro->categories->first()->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/img-default.jpg" alt="Gallery image 2" class="img-fluid" /></a>
 									</div>
 									@endif
 										
@@ -87,11 +87,11 @@
 									<div class="image">
 									@if($subrubro->images->count())
 									<div class="col-12">
-										<a href="{{ route('tienda.subrubro', [$subrubro->slug]) }}"><img src="/images/{{ $subrubro->images->first()->name }}" alt="Gallery image 2" class="img-fluid" /></a>
+										<a href="{{ route('tienda.subrubro', [$subrubro->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/{{ $subrubro->images->first()->name }}" alt="Gallery image 2" class="img-fluid" /></a>
 									</div>
 									@else
 									<div class="col-12">
-									<a href="{{ route('tienda.subrubro', [$subrubro->slug]) }}"><img src="/images/img-default.jpg" alt="Gallery image 2" class="img-fluid" /></a>
+									<a href="{{ route('tienda.subrubro', [$subrubro->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/img-default.jpg" alt="Gallery image 2" class="img-fluid" /></a>
 									</div>
 									@endif
 										

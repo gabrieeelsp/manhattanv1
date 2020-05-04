@@ -20,7 +20,7 @@
 				<!-- Logo Starts -->
 				<div class="col-md-4 col-lg-4">
 					<div id="logo">
-						<a href="/" class="d-flex justify-content-center"><img src="/images/logo.png"  title="Spice Shoppe" alt="Spice Shoppe" class="img-fluid" /></a>
+						<a href="/" class="d-flex justify-content-center"><img src="/{{ env('URL_REMOTE', '') }}images/logo.png"  title="Spice Shoppe" alt="Spice Shoppe" class="img-fluid" /></a>
 					</div>
 				</div>
 				<!-- Logo Starts -->

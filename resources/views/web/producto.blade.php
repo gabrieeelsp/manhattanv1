@@ -71,26 +71,26 @@
                         @foreach($stockproduct->images->sortBy('posicion') as $img)
                             @if($index == 1)
                             <div class="col-12">
-                                <a href="/images/{{ $img->name }}"><img src="/images/{{ $img->name }}" alt="Gallery image 2" class="img-fluid img-thumbnail" /></a>
+                                <a href="/{{ env('URL_REMOTE', '') }}images/{{ $img->name }}"><img src="/{{ env('URL_REMOTE', '') }}images/{{ $img->name }}" alt="Gallery image 2" class="img-fluid img-thumbnail" /></a>
                             </div>
                             @elseif($index == 2)
                             <div class="col-4 pr-0">
-                                <a href="/images/{{ $img->name }}"><img src="/images/thumbnails/{{ $img->name }}" alt="Gallery image 2" class="img-fluid img-thumbnail" /></a>
+                                <a href="/{{ env('URL_REMOTE', '') }}images/{{ $img->name }}"><img src="/{{ env('URL_REMOTE', '') }}images/thumbnails/{{ $img->name }}" alt="Gallery image 2" class="img-fluid img-thumbnail" /></a>
                             </div>
                             @elseif($index == 3)
                             <div class="col-4 pr-2 pl-2">
-                                <a href="/images/{{ $img->name }}"><img src="/images/thumbnails/{{ $img->name }}" alt="Gallery image 2" class="img-fluid img-thumbnail" /></a>
+                                <a href="/{{ env('URL_REMOTE', '') }}images/{{ $img->name }}"><img src="/{{ env('URL_REMOTE', '') }}images/thumbnails/{{ $img->name }}" alt="Gallery image 2" class="img-fluid img-thumbnail" /></a>
                             </div>
                             @elseif($index == 4)
                             <div class="col-4 pl-0">
-                                <a href="/images/{{ $img->name }}"><img src="/images/thumbnails/{{ $img->name }}" alt="Gallery image 2" class="img-fluid img-thumbnail" /></a>
+                                <a href="/{{ env('URL_REMOTE', '') }}images/{{ $img->name }}"><img src="/{{ env('URL_REMOTE', '') }}images/thumbnails/{{ $img->name }}" alt="Gallery image 2" class="img-fluid img-thumbnail" /></a>
                             </div>
                             @endif
                             <!-- {{   $index ++ }} -->
                         @endforeach
 						@if($stockproduct->images->count() == 0)
 							<div class="col-12">
-                                <a href="/images/img-default.jpg"><img src="/images/img-default.jpg" alt="Gallery image 2" class="img-fluid img-thumbnail" /></a>
+                                <a href="/{{ env('URL_REMOTE', '') }}images/img-default.jpg"><img src="/{{ env('URL_REMOTE', '') }}images/img-default.jpg" alt="Gallery image 2" class="img-fluid img-thumbnail" /></a>
                             </div>
 						@endif
 
@@ -147,11 +147,11 @@
 									<div class="image">
 									@if($relatestockproduct->images->first())
 									<div class="col-12">
-										<a href="{{ route('tienda.producto', [$relatestockproduct->slug]) }}"><img src="/images/{{ $relatestockproduct->images->first()->name }}" alt="Gallery image 2" class="img-fluid" /></a>
+										<a href="{{ route('tienda.producto', [$relatestockproduct->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/{{ $relatestockproduct->images->first()->name }}" alt="Gallery image 2" class="img-fluid" /></a>
 									</div>
 									@else
 									<div class="col-12">
-									<a href="{{ route('tienda.producto', [$relatestockproduct->slug]) }}"><img src="/images/img-default.jpg" alt="Gallery image 2" class="img-fluid" /></a>
+									<a href="{{ route('tienda.producto', [$relatestockproduct->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/img-default.jpg" alt="Gallery image 2" class="img-fluid" /></a>
 									</div>
 									@endif
 										

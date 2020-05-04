@@ -78,8 +78,8 @@ Vue.component('listcomponent', {
 							<div class="image">
 								
 								<div class="col-12">
-									<a v-show="item.img" :href="'/tienda/producto/' + item.slug"><img v-bind:src="'/images/' + item.img" alt="Gallery image 2" class="img-fluid" /></a>
-									<a v-show="!item.img" :href="'/tienda/producto/' + item.slug"><img v-bind:src="'/images/img-default.jpg'" alt="Gallery image 2" class="img-fluid" /></a>
+									<a v-show="item.img" :href="'/tienda/producto/' + item.slug"><img v-bind:src="'/{{ env('URL_REMOTE', '') }}images/' + item.img" alt="Gallery image 2" class="img-fluid" /></a>
+									<a v-show="!item.img" :href="'/tienda/producto/' + item.slug"><img v-bind:src="'/{{ env('URL_REMOTE', '') }}images/img-default.jpg'" alt="Gallery image 2" class="img-fluid" /></a>
 								</div>
 								
 									

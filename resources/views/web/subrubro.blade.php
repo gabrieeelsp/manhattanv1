@@ -57,11 +57,11 @@
 									<div class="image">
 									@if($category->images->count())
 									<div class="col-12">
-										<a href="{{ route('tienda.category', [$category->slug]) }}"><img src="/images/{{ $category->images->sortBy('posicion')->first()->name }}" alt="Gallery image 2" class="img-fluid" /></a>
+										<a href="{{ route('tienda.category', [$category->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/{{ $category->images->sortBy('posicion')->first()->name }}" alt="Gallery image 2" class="img-fluid" /></a>
 									</div>
 									@else
 									<div class="col-12">
-									<a href="{{ route('tienda.category', [$category->slug]) }}"><img src="/images/img-default.jpg" alt="Gallery image 2" class="img-fluid" /></a>
+									<a href="{{ route('tienda.category', [$category->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/img-default.jpg" alt="Gallery image 2" class="img-fluid" /></a>
 									</div>
 									@endif
 										

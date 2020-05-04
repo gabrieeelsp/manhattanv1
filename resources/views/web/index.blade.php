@@ -16,11 +16,11 @@
 									<div class="image">
 									@if($destacado->images->count())
 									<div class="col-12">
-										<a href="{{ route('tienda.producto',[$destacado->slug]) }}"><img src="/images/{{ $destacado->name }}" alt="Gallery image 2" class="img-fluid" /></a>
+										<a href="{{ route('tienda.producto',[$destacado->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/{{ $destacado->name }}" alt="Gallery image 2" class="img-fluid" /></a>
 									</div>
 									@else
 									<div class="col-12">
-									<a href="{{ route('tienda.producto', [$destacado->slug]) }}"><img src="/images/img-default.jpg" alt="Gallery image 2" class="img-fluid" /></a>
+									<a href="{{ route('tienda.producto', [$destacado->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/img-default.jpg" alt="Gallery image 2" class="img-fluid" /></a>
 									</div>
 									@endif
 										

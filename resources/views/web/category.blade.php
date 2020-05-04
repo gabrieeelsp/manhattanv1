@@ -77,11 +77,11 @@
 									<div class="image">
 									@if($stockproduct->images->count())
 									<div class="col-12">
-										<a href="{{ route('tienda.producto', [$stockproduct->slug]) }}"><img src="/images/{{ $stockproduct->images->first()->name }}" alt="Gallery image 2" class="img-fluid" /></a>
+										<a href="{{ route('tienda.producto', [$stockproduct->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/{{ $stockproduct->images->first()->name }}" alt="Gallery image 2" class="img-fluid" /></a>
 									</div>
 									@else
 									<div class="col-12">
-									<a href="{{ route('tienda.producto', [$stockproduct->slug]) }}"><img src="/images/img-default.jpg" alt="Gallery image 2" class="img-fluid" /></a>
+									<a href="{{ route('tienda.producto', [$stockproduct->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/img-default.jpg" alt="Gallery image 2" class="img-fluid" /></a>
 									</div>
 									@endif
 										

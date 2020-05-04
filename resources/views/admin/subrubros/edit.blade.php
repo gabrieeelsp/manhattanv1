@@ -64,7 +64,7 @@
                   @foreach ($subrubro->images->sortBy('posicion') as $img)
                     
                     <div class="card card-thumbnail mb-4 shadow-sm mr-2">
-                      <img src="{{ asset('images/'.$img->name)}}"  class="img-thumbnail" alt="">
+                      <img src="/{{ env('URL_REMOTE', '') }}images/{{ $img->name }}"  class="img-thumbnail" alt="">
                       <div class="card-body">
                         
                         <div class="d-flex justify-content-between">
