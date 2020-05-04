@@ -27,7 +27,7 @@ class WebController extends Controller
         $rubros = Rubro::orderBy('name', 'ASC')->get();
 
         $destacados = Stockproduct::all()
-            ->where('web_enable', '=', 'true')
+            ->where('web_enable', '=', 1)
             ->random(6);
         
         return view('web.index', [
@@ -43,14 +43,47 @@ class WebController extends Controller
             'rubros' => $rubros,
             ]);
     }
-    public function send_email_ajax(Request $request){
+    public function contact_product($id){
+        $rubros = Rubro::orderBy('name', 'ASC')->get();
 
+        $stockproduct = Stockproduct::find($id);
+
+        if (!$stockproduct) {
+            abort(404);
+        }
+
+        $consulta = "Estoy interesado en el producto:\n".
+            "Código: " . $stockproduct->id. "\n".
+            "Nombre: " . $stockproduct->name;
+        
+        return view('web.contact.contact', [
+            'rubros' => $rubros,
+            'consulta' => $consulta
+            ]);
+    }
+    public function send_mail(Request $request){
+        $rules = [
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'message' => 'required',
+        ];
+        $messages = [
+            'name.required' => 'El campo Nombre no puede quedar vacío.',
+            'phone.required' => 'El campo Teléfono no puede quedar vacío.',
+            'email.required' => 'El campo Email no puede quedar vacío.',
+            'message.required' => 'El campo Mensaje no puede quedar vacío.',
+        ];
+        $this->validate($request, $rules, $messages);
     }
     public function producto($slug)
     {
 
         $stockproduct = StockProduct::where('slug', '=', $slug)->first();
         
+        if (!$stockproduct) {
+            abort(404);
+        }
 
         $rubros = Rubro::orderBy('name', 'ASC')->get();
         
@@ -65,6 +98,10 @@ class WebController extends Controller
     {
 
         $category = Category::where('slug', '=', $slug)->first();
+
+        if (!$category) {
+            abort(404);
+        }
         
         $rubros = Rubro::orderBy('name', 'ASC')->get();
         
@@ -78,6 +115,10 @@ class WebController extends Controller
     {
 
         $subrubro = Subrubro::where('slug', '=', $slug)->first();
+
+        if (!$subrubro) {
+            abort(404);
+        }
         
         $rubros = Rubro::orderBy('name', 'ASC')->get();
         
@@ -92,6 +133,9 @@ class WebController extends Controller
 
         $rubro = Rubro::where('slug', '=', $slug)->first();
         
+        if (!$rubro) {
+            abort(404);
+        }
 
         $rubros = Rubro::orderBy('name', 'ASC')->get();
        
@@ -121,7 +165,7 @@ class WebController extends Controller
         $val = explode(' ', $query );
         $atr = [];
         foreach ($val as $q) {
-            array_push($atr, ['stockproducts.name', 'ILIKE', '%'.$q.'%'] );
+            array_push($atr, ['stockproducts.name', 'LIKE', '%'.strtolower($q).'%'] );
         };
 
         $stockproducts =DB::table('stockproducts')

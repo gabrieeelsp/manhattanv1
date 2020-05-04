@@ -57,7 +57,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mr-auto">
                         <li class="nav-item {{ setActive(['/' ]) }}">
-                            <a class="nav-link" href="#">Inicio</a>
+                            <a class="nav-link" href="/">Inicio</a>
                         </li>
 
 						@foreach($rubros as $rubro)

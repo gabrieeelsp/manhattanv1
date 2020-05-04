@@ -55,6 +55,7 @@ Route::get(         'tienda/producto',                      'Web\WebController@s
 Route::get(         'tienda/producto_search',               'Web\WebController@search_ajax')->name('tienda.search_ajax');
 
 Route::get(         'contact',                              'Web\WebController@contact')->name('contact');
-Route::get(         'contact/send_mail_ajax',                'Web\WebController@send_mail_ajax')->name('contact.send_mail');
+Route::POST(         'contact/send_mail',                    'Web\WebController@send_mail')->name('contact.send_mail');
+Route::get(         'contact/producto/{id}',                'Web\WebController@contact_product')->name('contact.product');
 
 Route::get(         '/',                                    'Web\WebController@index')->name('index');

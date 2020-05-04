@@ -56,7 +56,7 @@
             <!-- Breadcrumb Starts -->
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('tienda.category', [$stockproduct->category->slug]) }}">{{ $stockproduct->category->name }}</a></li>
                 </ol>
                 </nav>
@@ -119,7 +119,11 @@
                         
 					<!-- Manufacturer Ends -->
 						<hr />
-					
+					<!-- Consultar Starts -->
+						<div class="d-flex justify-content-end">
+                            <a class="btn btn-success rounded-0" href="{{ route('contact.product', $stockproduct->id) }}">Consultar por este producto</a>
+                        </div>
+					<!-- Consultar Ends -->
 					
 						
 					</div>

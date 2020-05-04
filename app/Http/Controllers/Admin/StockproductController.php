@@ -34,7 +34,7 @@ class StockproductController extends Controller
         $val = explode(' ', $query );
         $atr = [];
         foreach ($val as $q) {
-            array_push($atr, ['name', 'ILIKE', '%'.$q.'%'] );
+            array_push($atr, ['name', 'LIKE', '%'.strtolower($q).'%'] );
         };
 
         $cantidad = 5;

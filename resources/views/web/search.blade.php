@@ -57,7 +57,7 @@ Vue.component('listcomponent', {
         getItems: function(){
             this.page ++;
             //var urlItems = 'http://190.245.195.78:8000/tienda/producto_search?q={{ $q }}&page=' + this.page;
-			var urlItems = 'http://192.168.0.115:8000/tienda/producto_search?q={{ $q }}&page=' + this.page;
+			var urlItems = '/tienda/producto_search?q={{ $q }}&page=' + this.page;
             axios.get(urlItems).then(response => {
 				let posts = response.data.items.data;
 				this.last_page = response.data.items.last_page;

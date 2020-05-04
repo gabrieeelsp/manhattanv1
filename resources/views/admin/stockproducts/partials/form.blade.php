@@ -59,8 +59,8 @@
 </div>
 
 @push('scripts')
-<script src="/vendor/select2/dist/js/select2.min.js"></script>
-<script src="/vendor/stringToSlug/jquery.stringToSlug.min.js"></script>
+<script src="/{{ env('URL_REMOTE', '') }}vendor/select2/dist/js/select2.min.js"></script>
+<script src="/{{ env('URL_REMOTE', '') }}vendor/stringToSlug/jquery.stringToSlug.min.js"></script>
 <script src="/{{ env('URL_REMOTE', '') }}vendor/ckeditor/ckeditor.js"></script>
 <script>
   $(document).ready(function(){

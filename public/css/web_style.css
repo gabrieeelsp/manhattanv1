@@ -264,10 +264,16 @@ h1, h2, h3, h4, h5, h6 {
 .btn-black:hover, .btn-black:focus, .btn-black:active, .btn-black.active, .btn-main {
     background-color: #4bac52;
 }
+
+.panel-email{
+    color: #252a2f;
+    font: 14px/22px 'Roboto Condensed', sans-serif;
+}
 /*  Contact End --------*/
 
 /*  Footer Start --------*/
 .footer-links {
+    margin-top: 15px;;
     background-color: #e8e8e8;
     border-top: 1px solid #bcbcbc;
     padding: 25px 0 40px;

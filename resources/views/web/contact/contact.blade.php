@@ -23,7 +23,7 @@
 					<!-- Starts -->
 				<div class="row">
 				<!-- Contact Details Starts -->
-					<div class="col-sm-4">
+					<div class="col-md-5 col-lg-4">
 						<div class="panel panel-smart">
 							<div class="panel-heading">
 								<h3 class="panel-title">Contacto</h3>
@@ -60,65 +60,18 @@
 					</div>
 				<!-- Contact Details Ends -->
 				<!-- Contact Form Starts -->
-					<div class="col-sm-8">
+					<div class="col-md-7 col-lg-8 mt-2 mt-md-0">
 						<div class="panel panel-smart">
 							<div class="panel-heading">
 								<h3 class="panel-title">Envianos un email</h3>
 							</div>
-							<div class="panel-body">
-								<form method="POST" ><input name="_method" type="hidden" value="PUT"><input name="_token" type="hidden" value="HTQZzVjp5uetJscbUo1CAJ9RyT3kFhDxzlNBPhMb">
-									<div class="form-group row">
-										<label for="name" class="col-sm-2 col-form-label text-sm-right">Nombre</label>
-										<div class="col-sm-10">
-											<input class="form-control" name="name" type="text" id="name">
-											<ul class="mb-0 text-danger">
-											</ul>
-										</div>
-									</div>
+							<div class="panel-body panel-email">
+								{!! Form::open(['route' => 'contact.send_mail']) !!}
+									@include('web.contact.partials.form')
+								{!! Form::close() !!}
 
-									<div class="form-group row">
-										<label for="email" class="col-sm-2 col-form-label text-sm-right">Email</label>
-										<div class="col-sm-10">
-											<input class="form-control" name="email" type="text" id="email">
-											<ul class="mb-0 text-danger">
-											</ul>
-										</div>
-									</div>
-
-									<div class="form-group row">
-										<label for="phone" class="col-sm-2 col-form-label text-sm-right">Teléfono</label>
-										<div class="col-sm-10">
-											<input class="form-control" name="phone" type="text" id="phone">
-											<ul class="mb-0 text-danger">
-											</ul>
-										</div>
-									</div>
-
-									<div class="form-group row">
-										<label for="subject" class="col-sm-2 col-form-label text-sm-right">Asunto</label>
-										<div class="col-sm-10">
-											<input class="form-control" name="subject" type="text" id="subject">
-											<ul class="mb-0 text-danger">
-											</ul>
-										</div>
-									</div>
-
-									<div class="form-group row">
-										<label for="message" class="col-sm-2 col-form-label text-sm-right">Mensaje</label>
-										<div class="col-sm-10">
-											<textarea class="form-control" id="message" name="message" rows="5"></textarea>
-										</div>
-									</div>
+							
 								
-
-									<div class="form-group row">
-										<div class="col-sm-10 offset-sm-2">
-											<input class="btn btn-black" type="submit" value="Enviar">
-											
-										</div>
-									</div>
-
-             				 	</form>
 								
 							</div>
 						</div>

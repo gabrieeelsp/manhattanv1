@@ -34,7 +34,7 @@
 </div>
 
 @push('scripts')
-<script src="/vendor/stringToSlug/jquery.stringToSlug.min.js"></script>
+<script src="/{{ env('URL_REMOTE', '') }}vendor/stringToSlug/jquery.stringToSlug.min.js"></script>
 <script>
   $(document).ready(function(){
     $('#name, #slug').stringToSlug({
