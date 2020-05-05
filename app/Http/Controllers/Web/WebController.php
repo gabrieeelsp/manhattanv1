@@ -5,11 +5,14 @@ namespace App\Http\Controllers\Web;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 use App\Stockproduct;
 use App\Category;
 use App\Subrubro;
 use App\Rubro;
+
+use App\Mail\MessageReceived;
 
 class WebController extends Controller
 {
@@ -52,13 +55,17 @@ class WebController extends Controller
             abort(404);
         }
 
-        $consulta = "Estoy interesado en el producto:\n".
+        $asunto = "Consulta de producto, $stockproduct->name";
+        
+        $mensaje = "Estoy interesado en el producto:\n".
             "Código: " . $stockproduct->id. "\n".
-            "Nombre: " . $stockproduct->name;
+            "Nombre: " . $stockproduct->name. "\n".
+            "Comentario: ";
         
         return view('web.contact.contact', [
             'rubros' => $rubros,
-            'consulta' => $consulta
+            'asunto' => $asunto,
+            'mensaje' => $mensaje,  
             ]);
     }
     public function send_mail(Request $request){
@@ -74,7 +81,11 @@ class WebController extends Controller
             'email.required' => 'El campo Email no puede quedar vacío.',
             'message.required' => 'El campo Mensaje no puede quedar vacío.',
         ];
-        $this->validate($request, $rules, $messages);
+        $message = request()->validate($rules, $messages);
+
+        Mail::to('ventas@plastitodo.com.ar')->queue(new MessageReceived($message));
+        
+        return "Mensaje Enviado";
     }
     public function producto($slug)
     {

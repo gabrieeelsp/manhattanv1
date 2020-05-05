@@ -43,7 +43,7 @@
 <div class="form-group row">
   {{ Form::label('subject', 'Asunto', ['class' => 'col-sm-2 col-form-label text-sm-right']) }}
   <div class="col-sm-10">
-        {{ Form::text('subject', null, [
+        {{ Form::text('subject', (isset($asunto))  ? $asunto : '', [
             'class' => 'form-control' . ( $errors->has('subject') ? ' is-invalid' : '' )
             ]) }}
         <ul class="mb-0 text-danger">
@@ -57,7 +57,7 @@
 <div class="form-group row">
   {{ Form::label('message', 'Mensaje', ['class' => 'col-sm-2 col-form-label text-sm-right']) }}
   <div class="col-sm-10">
-        {{ Form::textarea('message', null, [
+        {{ Form::textarea('message', (isset($mensaje))  ? $mensaje : '', [
             'class' => 'form-control' . ( $errors->has('message') ? ' is-invalid' : '' ),
             'rows' => '5'
             ]) }}

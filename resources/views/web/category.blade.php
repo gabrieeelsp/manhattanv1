@@ -75,15 +75,15 @@
 							<div class="col-md-6 col-sm-6">
 								<div class="product-col">
 									<div class="image">
-									@if($stockproduct->images->count())
-									<div class="col-12">
-										<a href="{{ route('tienda.producto', [$stockproduct->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/{{ $stockproduct->images->first()->name }}" alt="Gallery image 2" class="img-fluid" /></a>
-									</div>
-									@else
-									<div class="col-12">
-									<a href="{{ route('tienda.producto', [$stockproduct->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/img-default.jpg" alt="Gallery image 2" class="img-fluid" /></a>
-									</div>
-									@endif
+										@if($stockproduct->images->count())
+										<div class="col-12">
+											<a href="{{ route('tienda.producto', [$stockproduct->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/{{ $stockproduct->images->first()->name }}" alt="Gallery image 2" class="img-fluid" /></a>
+										</div>
+										@else
+										<div class="col-12">
+										<a href="{{ route('tienda.producto', [$stockproduct->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/img-default.jpg" alt="Gallery image 2" class="img-fluid" /></a>
+										</div>
+										@endif
 										
 									</div>
 									<div class="caption text-center">

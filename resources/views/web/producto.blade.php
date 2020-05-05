@@ -74,15 +74,15 @@
                                 <a href="/{{ env('URL_REMOTE', '') }}images/{{ $img->name }}"><img src="/{{ env('URL_REMOTE', '') }}images/{{ $img->name }}" alt="Gallery image 2" class="img-fluid img-thumbnail" /></a>
                             </div>
                             @elseif($index == 2)
-                            <div class="col-4 pr-0">
+                            <div class="col-4 pr-0 mt-1">
                                 <a href="/{{ env('URL_REMOTE', '') }}images/{{ $img->name }}"><img src="/{{ env('URL_REMOTE', '') }}images/thumbnails/{{ $img->name }}" alt="Gallery image 2" class="img-fluid img-thumbnail" /></a>
                             </div>
                             @elseif($index == 3)
-                            <div class="col-4 pr-2 pl-2">
+                            <div class="col-4 pr-2 pl-2 mt-1">
                                 <a href="/{{ env('URL_REMOTE', '') }}images/{{ $img->name }}"><img src="/{{ env('URL_REMOTE', '') }}images/thumbnails/{{ $img->name }}" alt="Gallery image 2" class="img-fluid img-thumbnail" /></a>
                             </div>
                             @elseif($index == 4)
-                            <div class="col-4 pl-0">
+                            <div class="col-4 pl-0 mt-1">
                                 <a href="/{{ env('URL_REMOTE', '') }}images/{{ $img->name }}"><img src="/{{ env('URL_REMOTE', '') }}images/thumbnails/{{ $img->name }}" alt="Gallery image 2" class="img-fluid img-thumbnail" /></a>
                             </div>
                             @endif
@@ -118,13 +118,13 @@
                         </div>
                         
 					<!-- Manufacturer Ends -->
-						<hr />
+						
 					<!-- Consultar Starts -->
 						<div class="d-flex justify-content-end">
                             <a class="btn btn-success rounded-0" href="{{ route('contact.product', $stockproduct->id) }}">Consultar por este producto</a>
                         </div>
 					<!-- Consultar Ends -->
-					
+					<hr />
 						
 					</div>
 				<!-- Right Ends -->
@@ -146,17 +146,17 @@
 								<div class="product-col">
 									<div class="image">
 									@if($relatestockproduct->images->first())
-									<div class="col-12">
-										<a href="{{ route('tienda.producto', [$relatestockproduct->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/{{ $relatestockproduct->images->first()->name }}" alt="Gallery image 2" class="img-fluid" /></a>
+									<div class="col-12 px-0">
+										<a class="bg-success" href="{{ route('tienda.producto', [$relatestockproduct->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/{{ $relatestockproduct->images->first()->name }}" alt="Gallery image 2" class="img-fluid" /></a>
 									</div>
 									@else
-									<div class="col-12">
+									<div class="col-12 px-0">
 									<a href="{{ route('tienda.producto', [$relatestockproduct->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/img-default.jpg" alt="Gallery image 2" class="img-fluid" /></a>
 									</div>
 									@endif
 										
 									</div>
-									<div class="caption">
+									<div class="caption text-center">
 										<h4><a href="{{ route('tienda.producto', [$relatestockproduct->slug]) }}">{{ $relatestockproduct->name }}</a></h4>
 										<div class="description">
 											
@@ -181,7 +181,7 @@
 <!-- Main Container Ends -->
 
 @push('scripts')
-<script src="/vendor/simpleLightBox/simpleLightbox.min.js"></script>
+<script src="/{{ env('URL_REMOTE', '') }}vendor/simpleLightBox/simpleLightbox.min.js"></script>
 <script>
     // using plain js
     new SimpleLightbox({elements: '.imageGallery1 a'});
