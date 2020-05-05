@@ -85,7 +85,7 @@ class StockproductImageController extends Controller
                 $stockproduct->save();
             } 
 
-        $name = $stockproduct->name . '_'. $stockproduct->id . '-' .$stockproductImage->id.  '.' . $image->getClientOriginalExtension();
+        $name = $stockproduct->slug . '_'. $stockproduct->id . '-' .$stockproductImage->id.  '.' . $image->getClientOriginalExtension();
 
         try {
             //Guardo el original

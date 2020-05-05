@@ -85,7 +85,7 @@ class CategoryImageController extends Controller
                 $category->save();
             } 
 
-        $name = $category->name . '_'. $category->id . '-' .$categoryImage->id.  '.' . $image->getClientOriginalExtension();
+        $name = $category->slug . '_'. $category->id . '-' .$categoryImage->id.  '.' . $image->getClientOriginalExtension();
 
         try {
             //Guardo el original

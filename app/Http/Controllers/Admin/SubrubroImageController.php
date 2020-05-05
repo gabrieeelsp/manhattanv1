@@ -85,7 +85,7 @@ class SubrubroImageController extends Controller
                 $subrubro->save();
             } 
 
-        $name = $subrubro->name . '_'. $subrubro->id . '-' .$subrubroImage->id.  '.' . $image->getClientOriginalExtension();
+        $name = $subrubro->slug . '_'. $subrubro->id . '-' .$subrubroImage->id.  '.' . $image->getClientOriginalExtension();
 
         try {
             //Guardo el original
