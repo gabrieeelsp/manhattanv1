@@ -7,7 +7,7 @@
 		<!-- Related Products Starts -->
                 
 		<div class="product-info-box mt-3">
-					<h4 class="heading">DESTACADOS DE LA SENAMA</h4>
+					<h4 class="heading">DESTACADOS DE LA SEMANA</h4>
 				<!-- Products Row Starts -->
 					<div class="row">
                     @foreach($destacados as $destacado)
@@ -16,11 +16,11 @@
 									<div class="image">
 									@if($destacado->images->count())
 									<div class="col-12">
-										<a href="{{ route('tienda.producto',[$destacado->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/{{ $destacado->images->first()->slug }}" alt="Gallery image 2" class="img-fluid" /></a>
+										<a href="{{ route('tienda.producto', [$destacado->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/{{ $destacado->images->first()->slug }}" alt="Gallery image 2" class="img-fluid" /></a>
 									</div>
 									@else
 									<div class="col-12">
-									<a href="{{ route('tienda.producto', [$destacado->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/img-default.jpg" alt="Gallery image 2" class="img-fluid" /></a>
+										<a href="{{ route('tienda.producto', [$destacado->slug]) }}"><img src="/{{ env('URL_REMOTE', '') }}images/img-default.jpg" alt="Gallery image 2" class="img-fluid" /></a>
 									</div>
 									@endif
 										
