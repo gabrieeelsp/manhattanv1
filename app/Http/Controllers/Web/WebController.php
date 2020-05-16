@@ -83,9 +83,21 @@ class WebController extends Controller
         ];
         $message = request()->validate($rules, $messages);
 
-        Mail::to('ventas@plastitodo.com.ar')->queue(new MessageReceived($message));
+        $rubros = Rubro::orderBy('name', 'ASC')->get();
+        try {
+            Mail::to('ventas@plastitodo.com.ar')->queue(new MessageReceived($message));
+            session()->flash('success', true);
+            return redirect()->route('contact');
+
+        } catch (Exception $e) {
+            session()->flash('warning', true);
+            return redirect()->route('contact', [
+                'rubros' => $rubros,
+            ]);
+        }
         
-        return "Mensaje Enviado";
+        
+        
     }
     public function producto($slug)
     {

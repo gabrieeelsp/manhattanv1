@@ -66,12 +66,22 @@
 								<h3 class="panel-title">Envianos un email</h3>
 							</div>
 							<div class="panel-body panel-email">
-								{!! Form::open(['route' => 'contact.send_mail']) !!}
-									@include('web.contact.partials.form')
-								{!! Form::close() !!}
 
+								@if(Session::has('success'))
+									<span class="text-success">
+										Mensaje enviado con exito
+									</span>
+								@elseif(Session::has('warning'))
+									<span class="text-danger">
+										Se ha producido un error
+									</span>
+								@else
+									{!! Form::open(['route' => 'contact.send_mail']) !!}
+										@include('web.contact.partials.form')
+									{!! Form::close() !!}
+
+								@endif
 							
-								
 								
 							</div>
 						</div>

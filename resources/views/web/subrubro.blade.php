@@ -66,7 +66,7 @@
 									@endif
 										
 									</div>
-									<div class="caption">
+									<div class="caption text-center">
 										<h4><a href="{{ route('tienda.category', [$category->slug]) }}">{{ $category->name }}</a></h4>
 										<div class="description">
 											
