@@ -63,7 +63,7 @@ class CategoryImageController extends Controller
             if( $img_width > $img_height * 1.3){
                 $img_width = $img_height * 1.3;
             }else{
-                $img_height = $img_width / 1.9;
+                $img_height = $img_width / 1.3;
             }            
         }else{
             $img_height = $img_width / 1.3;
