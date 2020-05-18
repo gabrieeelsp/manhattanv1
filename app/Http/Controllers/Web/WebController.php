@@ -16,15 +16,7 @@ use App\Mail\MessageReceived;
 
 class WebController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    
 
     public function index(){
         $rubros = Rubro::orderBy('name', 'ASC')->get();
