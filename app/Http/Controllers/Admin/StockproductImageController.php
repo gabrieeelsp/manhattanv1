@@ -71,6 +71,11 @@ class StockproductImageController extends Controller
         
         $img = $img->crop(intval($img_width), intval($img_height)); 
 
+        // resize the image to a width of 300 and constrain aspect ratio (auto height)
+        $img = $img->resize(780, null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+
 
         $posicion = $stockproduct->getMaxImagePosition() + 1;
 
@@ -94,11 +99,11 @@ class StockproductImageController extends Controller
 
             //Guardo el principal
             $destinationPath = public_path('/images/') . $name;
-            $img->save($destinationPath, 40);
+            $img->save($destinationPath, 80);
 
             //Guardo el thumbnail
             $destinationPath = public_path('/images/thumbnails/') . $name;
-            $img->save($destinationPath, 20);
+            $img->save($destinationPath, 50);
 
             $stockproductImage->name = $name;
             $stockproductImage->save();
